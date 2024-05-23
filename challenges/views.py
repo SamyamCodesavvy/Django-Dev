@@ -42,4 +42,5 @@ def monthly_challenge(request, month): #placeholder in urls.py is month so pass 
             "month_name": month
         }))
     except:
-        return HttpResponseNotFound("<i><h2>The month is invalid!!!</h2></i>")
+        response_data = render_to_string("404.html")
+        return HttpResponseNotFound(response_data)
